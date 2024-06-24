@@ -1,0 +1,30 @@
+.card-container-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card-container {
+    color: var(--background-color);
+    display: flex;
+    flex: 1 1 300px; /* Isso garante que cada card tenha uma largura mínima de 300px */
+    margin: 10px; /* Adicione margens entre os cards */
+    background-color: rgb(116, 93, 120);
+    align-items: center;
+}
+
+
+.pokemon-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.type {
+    justify-content: center;
+    padding-left: 10px;
+    background-color: rgb(182, 180, 180);
+    border-radius: 8px;
+    margin-left: 10px;
+    padding: 10px;
+}

@@ -1,0 +1,87 @@
+:root{
+    --font-family: Arial, Helvetica, sans-serif;
+    --background-color: #1d0c26;
+    --mysc-color:#3f3d59;
+    --input-color:#7e7acf ;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.loginTitle {
+    font-family: var(--font-family);
+    color: var(--input-color)
+}
+
+.login_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.textBox {
+    width: 300px;
+    padding: 20px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: var(--mysc-color);
+    border-radius: 10px;
+}
+
+input::placeholder {
+    color: var(--input-color);
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.register {
+    font-family: var(--font-family);
+    font-style: italic;
+    color: var(--mysc-color)
+}
+
+a {
+    color: var(--input-color);
+    padding-left: 5px;
+}
+
+.loginButton {
+    background-color: var(--mysc-color);
+    border-style: none;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    font-style: var(--font-family);
+    font-size: 20px;
+    color: var(--background-color);
+    &:hover{
+        cursor: pointer;
+        background-color: var(--input-color);
+    }
+}
+
+.homeButton {
+    border-style: none;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    font-style: var(--font-family);
+    font-size: 20px;
+    color: var(--background-color);
+    background-color: rgba(0, 255, 136, 0.89);
+    &:disabled {
+        background-color: rgba(255, 47, 0, 0.89);
+    }
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+
+

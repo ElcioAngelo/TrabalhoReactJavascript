@@ -1,0 +1,11 @@
+.returnHomeButton {
+    padding: 10px;
+    background-color: rgb(174, 122, 84);
+    border-style: none;
+    margin: 10px;
+    border-radius: 8px;
+    &:hover{
+        cursor:pointer;
+        background-color:rgb(93, 65, 45)
+    }
+}
