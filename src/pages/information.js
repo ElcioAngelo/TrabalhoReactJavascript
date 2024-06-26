@@ -7,16 +7,14 @@ import './information.css'
 import { Card, CardBody, CardHeader, CardFooter, Heading, Image, Text, Badge, Flex, Button} from "@chakra-ui/react";
 
 const Information = () => {
-    const {id} = useParams()
-    const pokemonIndex = parseInt(id)
+    let {id} = useParams()
     const [pokemon, setPokemon] = useState(null);
     const [typeColors, setTypeColors] = useState({})
 
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
-                const pokemonIndex = id
-                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`);
+                const response = await axios.get(`http://localhost:8080/pokemon/${id}`);
                 setPokemon(response.data);
             } catch (error) {
                 console.error("Erro ao buscar dados do Pokémon:", error);
@@ -49,7 +47,7 @@ const Information = () => {
         setTypeColors(colors)
     }, [])
 
-    const link = `http://localhost:3000/pokemon/${pokemonIndex}`
+    const link = `http://localhost:3000/pokemon/${id}`
 
     return (
         <div>
@@ -64,7 +62,7 @@ const Information = () => {
                     </CardHeader>
                     <CardBody>
                         <Link to={link}>
-                        <Image index={pokemonIndex} className="pokemon-image" src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name} />
+                        <Image index={id} className="pokemon-image" src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name} />
                         </Link>
                         <Flex direction="column" backgroundColor={'plum'} borderRadius={'8px'} alignItems={'center'}>
                             <Text>Habilidades:</Text>

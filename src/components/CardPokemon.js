@@ -11,7 +11,7 @@ const CardPokemon = ({ pokemonIndex }) => {
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
-                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`);
+                const response = await axios.get(`http://localhost:8080/pokemon/${pokemonIndex}`);
                 setPokemon(response.data);
             } catch (error) {
                 console.error("Erro ao buscar dados do Pokémon:", error);
@@ -44,8 +44,10 @@ const CardPokemon = ({ pokemonIndex }) => {
         setTypeColors(colors)
     }, [])
 
+    if(!pokemon){
+        return <div>Servidor Não Disponivel!</div>
+    }
     const link = `http://localhost:3000/pokemon/${pokemonIndex}`
-
     return (
         <div className="card-container-wrapper">
             {pokemon && (
@@ -55,7 +57,7 @@ const CardPokemon = ({ pokemonIndex }) => {
                     </CardHeader>
                     <CardBody>
                         <Link to={link}>
-                        <Image index={pokemonIndex} className="pokemon-image" src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name} />
+                        <Image className="pokemon-image" src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name}/>
                         </Link>
                     </CardBody>
                     <CardFooter>
@@ -71,3 +73,4 @@ const CardPokemon = ({ pokemonIndex }) => {
 }
 
 export default CardPokemon;
+
